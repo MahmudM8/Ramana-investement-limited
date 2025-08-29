@@ -904,7 +904,7 @@
                 font-size: 2.5rem;
             }
             
-            .nav-menu {
+              .nav-menu {
                 position: fixed;
                 top: 80px;
                 left: -100%;
@@ -914,9 +914,10 @@
                 box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
                 padding: 2rem;
                 transition: var(--transition);
-                gap: 1.5rem;
+                gap: 0;
                 height: calc(100vh - 80px);
                 overflow-y: auto;
+                z-index: 999;
             }
             
             .nav-menu.active {
@@ -925,6 +926,7 @@
             
             .mobile-menu-btn {
                 display: block;
+                z-index: 1001;
             }
             
             .contact-btn {
@@ -938,32 +940,102 @@
                 text-align: center;
             }
             
-            .hero-buttons {
-                flex-direction: column;
+            /* Mobile navigation items */
+            .nav-item {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
             }
             
-            .hero {
-                padding: 8rem 0 4rem;
+            .nav-item:last-child {
+                border-bottom: none;
             }
             
-            section {
-                padding: 4rem 0;
+            .nav-link {
+                display: block;
+                padding: 1rem;
+                font-size: 1.1rem;
+                width: 100%;
             }
-
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 24px;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .mobile-contact-btn {
+            
+            .nav-link::after {
                 display: none;
             }
+            
+            .nav-link:hover {
+                background-color: var(--background-light);
+            }
+            
+            /* Improved mobile menu button */
+            .mobile-menu-btn {
+                background: none;
+                border: none;
+                font-size: 1.8rem;
+                cursor: pointer;
+                color: var(--primary-dark);
+                padding: 0.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+            }
+            
+            .mobile-menu-btn:hover {
+                color: var(--primary-glass);
+            }
+            
+            /* Mobile header adjustments */
+            .header-container {
+                padding: 0 1rem;
+            }
+            
+            .logo-text {
+                font-size: 1.2rem;
+            }
+            
+            /* Prevent body scrolling when menu is open */
+            body.menu-open {
+                overflow: hidden;
+            }
+            
+            /* Mobile contact button in menu */
+            .mobile-nav-contact {
+                display: block;
+                margin-top: 2rem;
+                padding: 1rem;
+                text-align: center;
+            }
         }
+
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1rem;
+            }
+            
+            .logo-circle {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .logo-circle-text {
+                font-size: 1rem;
+            }
+            
+            .hero-tagline {
+                font-size: 2rem;
+            }
+            
+            .hero-subtext {
+                font-size: 1rem;
+            }
+            
+            .nav-link {
+                padding: 0.8rem;
+                   font-size: 1rem;
+            }
+        }
+         
     </style>
 </head>
 <body>
