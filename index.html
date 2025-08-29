@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramana Investment Limited - Building Trust. Delivering Excellence.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Lora:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --primary-dark: #12372A;
+            --primary-glass: #436850;
+            --secondary-light: #ADBC9F;
+            --background-light: #FBFADA;
+            --white: #ffffff;
+            --black: #222222;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            font-family: 'Cinzel', serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            border: 2px solid var(--primary-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-glass);
+            border-color: var(--primary-glass);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-glass {
+            background-color: var(--primary-glass);
+            color: var(--white);
+            border: 2px solid var(--primary-glass);
+            box-shadow: 0 4px 10px rgba(67, 104, 80, 0.3);
+        }
+
+        .btn-glass:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(67, 104, 80, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-glass);
+            border: 2px solid var(--primary-glass);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-glass);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .logo-circle-text {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .nav-link {
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            position: relative;
+            color: var(--black);
+            white-space: nowrap;
+            font-size: 0.95rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-glass);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-dark);
+        }
+
+        .contact-btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 0 6rem;
+            background: linear-gradient(135deg, var(--background-light) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 300px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Ccircle cx='150' cy='150' r='140' fill='none' stroke='%2312372A' stroke-width='2' stroke-opacity='0.5'/%3E%3Ctext x='150' y='160' font-family='Arial' font-size='60' font-weight='bold' fill='%2312372A' fill-opacity='0.8' text-anchor='middle'%3ERIL%3C/text%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tagline {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+        }
+
+        .hero-subtext {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .years-highlight {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.4rem;
+            color: var(--primary-glass);
+            background: rgba(173, 188, 159, 0.2);
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-glass);
+            margin: 1.2rem auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .about-item h3 {
+            color: var(--primary-glass);
+            margin-bottom: 0.8rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .about-item h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-glass);
+            border-radius: 50%;
+        }
+
+        .about-image {
+            height: 400px;
+            background: linear-gradient(45deg, var(--secondary-light), var(--primary-glass));
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(135deg, transparent 0%, transparent 50%, var(--white) 50%, var(--white) 100%);
+            background-size: 20px 20px;
+        }
+
+        /* Services & Values */
+        .services {
+            background-color: var(--background-light);
+        }
+
+        .services-grid, .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card, .value-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before, .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-glass));
+        }
+
+        .service-card:hover, .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon, .value-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--background-light);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary-dark);
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .service-icon::after, .value-icon::after {
+            content: '';
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 2px solid var(--secondary-light);
+            opacity: 0.5;
+        }
+
+        /* Leadership */
+        .leadership {
+            background-color: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .team-member {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-img {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 1.8rem;
+        }
+
+        .team-role {
+            color: var(--primary-glass);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Certificates */
+        .certificates {
+            background-color: var(--background-light);
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .certificate {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .certificate:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .certificate-img {
+            width: 100%;
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .certificate-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .certificate-placeholder {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Clients */
+        .clients {
+            background-color: var(--white);
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .client-logo {
+            background-color: var(--white);
+            border-radius: 8px;
+            height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            transition: var(--transition);
+            font-weight: 600;
+            color: var(--primary-dark);
+            overflow: hidden;
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            max-height: 80px;
+        }
+
+        .client-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+            background-color: var(--background-light);
+        }
+
+        /* Contact */
+        .contact {
+            background: linear-gradient(to bottom, var(--background-light) 0%, var(--white) 100%);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--primary-glass);
+            margin-top: 4px;
+        }
+
+        .contact-form {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-glass));
+            border-radius: 10px 10px 0 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--secondary-light);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-glass);
+            box-shadow: 0 0 0 3px rgba(67, 104, 80, 0.2);
+        }
+
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .map-container {
+            height: 250px;
+            background-color: var(--secondary-light);
+            border-radius: 8px;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-logo-text {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            color: var(--white);
+            margin-bottom: 1.8rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--secondary-light);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--secondary-light);
+            font-size: 0.9rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-glass);
+            transform: translateY(-3px);
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        /* Form Messages */
+        .form-message {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Loading spinner for form submission */
+        .form-loading {
+            display: none;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary-glass);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-container, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-tagline {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 2rem;
+                transition: var(--transition);
+                gap: 1.5rem;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .contact-btn {
+                display: none;
+            }
+            
+            .mobile-contact-btn {
+                display: block;
+                width: 100%;
+                margin-top: 1rem;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .hero {
+                padding: 8rem 0 4rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-contact-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/2347088100577?text=Hello%20Ramana%20Investment%20Limited,%20I%20would%20like%20to%20get%20more%20information" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-circle">
+                    <span class="logo-circle-text">RIL</span>
+                </div>
+                <span class="logo-text">Ramana Investment Limited</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#leadership" class="nav-link">Leadership</a></li>
+                <li class="nav-item"><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li class="nav-item"><a href="#clients" class="nav-link">Clients</a></li>
+            </ul>
+            
+            <a href="#contact" class="btn btn-glass contact-btn">Contact Us</a>
+            
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-tagline">Building Trust. Delivering Excellence.</h1>
+                <p class="hero-subtext"><span class="years-highlight">20+ years</span> of successful contracts, supplies, and professional services for government and private organizations.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>About Us</h2>
+                <p>Learn about our history, mission, and vision</p>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-content">
+                    <div class="about-item fade-in">
+                        <h3>Our History</h3>
+                        <p>Founded over 20 years ago, Ramana Investment Limited has established itself as a trusted partner in contracting and supply services. Our journey began with a simple mission: to deliver exceptional service with integrity and professionalism.</p>
+                    </div>
+                    
+                    <div class="about-item fade-in">
+                        <h3>Our Mission</h3>
+                        <p>To provide high-quality contracting and supply services that meet the evolving needs of our clients while maintaining the highest standards of professionalism and ethical conduct.</p>
+                    </div>
+                    
+                    <div class="about-item fade-in">
+                        <h3>Our Vision</h3>
+                        <p>To be the leading provider of contracting and supply services in Nigeria, recognized for our reliability, quality, and commitment to excellence in every project we undertake.</p>
+                    </div>
+                </div>
+                
+                <div class="about-image fade-in">
+                    <img src="IMG_9910.JPG" alt="About Ramana Investment Limited">
+                    
+                </div>
+            </div>
+
+            <a href="#contact" class="btn btn-glass mobile-contact-btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Services</h2>
+                <p>Comprehensive solutions for your contracting and supply needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Building Contracts</h3>
+                    <p>We undertake construction projects of all scales, delivering quality workmanship on time and within budget. Our expertise spans residential, commercial, and industrial projects.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h3>Supply Contracts</h3>
+                    <p>We provide reliable supply chain solutions for construction materials, office equipment, and specialized products, ensuring timely delivery and quality assurance.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Scrap Dealership</h3>
+                    <p>We offer professional scrap management services, including collection, processing, and recycling of metal and other materials with environmental responsibility.</p>
+                </div>
+            </div>
+            
+            <div class="section-title fade-in" style="margin-top: 5rem;">
+                <h2>Our Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>We conduct all business with honesty and transparency, building trust with our clients and partners.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Transparency</h3>
+                    <p>We maintain open communication and clear processes in all our operations and dealings.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Professionalism</h3>
+                    <p>We deliver services with expertise, attention to detail, and commitment to excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="leadership">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Leadership</h2>
+                <p>Experienced professionals dedicated to excellence</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <div class="team-img">
+                        <img src="IMG_9892.jpg" alt="RT Hon Abdulmumini G. Mapindi - Founder and Chairman">
+                    </div>
+                    <div class="team-info">
+                        <h3>RT Hon Abdulmumini G. Mapindi</h3>
+                        <p class="team-role">Founder and Chairman, Board of Directors</p>
+                        <p>With over 25 years of industry experience, Hon Abdulmumini leads the company with vision and expertise.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member fade-in">
+                    <div class="team-img">
+                         <img src="IMG_9894.jpeg" alt="Aisha H. Mapindi - Director">
+                    </div>
+                    <div class="team-info">
+                        <h3>Aisha H. Mapindi</h3>
+                        <p class="team-role">Director</p>
+                        <p>Mrs Aisha oversees all company operations, ensuring efficiency and quality across all projects.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member fade-in">
+                    <div class="team-img">
+                        <img src="IMG_9893.jpg" alt="Abdulmumini A. Mapindi - Acting MD/CEO">
+                    </div>
+                    <div class="team-info">
+                        <h3>Abdulmumini A. Mapindi</h3>
+                        <p class="team-role">Acting MD/CEO</p>
+                        <p>With extensive experience in business management, Abdulmumini ensures the company's strategic vision is implemented effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Certifications & Accreditations</h2>
+                <p>Our certifications stand as proof of our integrity, compliance, and professionalism.</p>
+            </div>
+            
+            <div class="certificates-grid">
+                <div class="certificate fade-in" onclick="openLightbox('IMG_9888.jpg')">
+                    <div class="certificate-img">
+                        <img src="IMG_9888.jpg" alt="Tax Clearance Certificate">
+                    </div>
+                    <h3>Tax Clearance Certificate</h3>
+                    <p>RC NO: 391040</p>
+                </div>
+                
+                <div class="certificate fade-in" onclick="openLightbox('IMG_9887.jpg')">
+                    <div class="certificate-img">
+                        <img src="IMG_9887.jpg" alt="ITF Certificate">
+                    </div>
+                    <h3>ITF</h3>
+                    <p>Certificate of Compliance</p>
+                </div>
+                
+                <div class="certificate fade-in" onclick="openLightbox('IMG_9879.jpg')">
+                    <div class="certificate-img">
+                        <img src="IMG_9879.jpg" alt="CAC Certificate">
+                    </div>
+                    <h3>CAC Certificate</h3>
+                    <p>RC NO: 391040</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Clients & Partners</h2>
+                <p>Trusted for over two decades by Nigeria's leading organizations.</p>
+            </div>
+            
+            <div class="clients-grid">
+                <div class="client-logo fade-in">
+                    <img src="unnamed1.jpg" alt="Central Bank of Nigeria">
+                </div>
+                <div class="client-logo fade-in">
+                    <img src="unnamed4.jpg" alt="INEC">
+                </div>
+                <div class="client-logo fade-in">
+                    <img src="IMG_9883.JPG" alt="TETFund">
+                </div>
+                <div class="client-logo fade-in">
+                    <img src="unnamed2.jpg" alt="Federal Character Commission">
+                </div>
+                <div class="client-logo fade-in">
+                    <img src="unnamed3.jpg" alt="Border Commission">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for inquiries or quotes</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 class="fade-in">Get In Touch</h3>
+                    
+                    <div class="contact-item fade-in">
+                        <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <div>
+                            <h4>Address</h4>
+                            <p>No. 15 UYO Crescent Area 11 Garki, Abuja</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item fade-in">
+                        <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+2347088100577">+234 7088100577</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item fade-in">
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@ramanainvestment.com">info@ramanainvestment.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container fade-in">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.218866971358!2d7.488774274056655!3d9.03709708853825!2m3!1f0!2f0!3f0!3m2!1i1020!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDInMTMuNiJOIDfCsDI5JzI3LjEiRQ!5e0!3m2!1sen!2sng!4v1678899999999!5m2!1sen!2sng" width="100%" height="100%" style="border-radius:8px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <h3>Send Message</h3>
+                    <div id="form-message" class="form-message"></div>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" name="from_name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="from_email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="from_phone" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-input" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-glass" style="width: 100%;">Send Message</button>
+                        <div id="form-loading" class="form-loading">
+                            <div class="spinner"></div>
+                            <p>Sending your message...</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <div class="footer-logo-circle">
+                        <span style="color: var(--primary-dark); font-weight: 700;">RIL</span>
+                    </div>
+                    <span class="footer-logo-text">Ramana Investment Limited</span>
+                    <p style="color: var(--secondary-light); margin-top: 1rem;">Building Trust. Delivering Excellence.</p>
+                    
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#leadership">Leadership</a></li>
+                        <li><a href="#certificates">Certificates</a></li>
+                        <li><a href="#clients">Clients</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> No. 15 UYO Crescent Area 11 Garki, Abuja</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+2347088100577" style="color: var(--secondary-light);">+234 7088100577</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@ramanainvestment.com" style="color: var(--secondary-light);">info@ramanainvestment.com</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Ramana Investment Limited. All Rights Reserved.<br>Designed by M8Web.Dev</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="">
+    </div>
+
+    <script>
+        // Initialize EmailJS with your public key
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
+        })();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+        
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Lightbox functionality
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightboxImg.src = imageSrc;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close lightbox when clicking outside the image
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target !== document.getElementById('lightbox-img')) {
+                closeLightbox();
+            }
+        });
+        
+        // Contact form submission with EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const messageDiv = document.getElementById('form-message');
+            const loadingDiv = document.getElementById('form-loading');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            
+            // Show loading state
+            submitBtn.style.display = 'none';
+            loadingDiv.style.display = 'block';
+            messageDiv.style.display = 'none';
+            
+            // Send email using EmailJS
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    messageDiv.textContent = 'Thank you for your message! We will contact you shortly.';
+                    messageDiv.className = 'form-message success';
+                    messageDiv.style.display = 'block';
+                    
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                    
+                    // Hide loading state
+                    loadingDiv.style.display = 'none';
+                    submitBtn.style.display = 'block';
+                    
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error message
+                    messageDiv.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
+                    messageDiv.className = 'form-message error';
+                    messageDiv.style.display = 'block';
+                    
+                    // Hide loading state
+                    loadingDiv.style.display = 'none';
+                    submitBtn.style.display = 'block';
+                    
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                });
+        });
+    </script>
+</body>
+</html>
